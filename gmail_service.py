@@ -20,16 +20,16 @@ def fetch_mail():
 
     search = GmailSearch(api_resource=api_resource)
 
-    emails = search("in:inbox")
+    emails = search.invoke("in:inbox")
 
     mails = []
 
     for email in emails:
         mails.append({
-            "id": email["id"],
-            "threadId": email["threadId"],
+            # "id": email["id"],
+            # "threadId": email["threadId"],
+            "sender": email["sender"],
             "snippet": email["snippet"],
-            "sender": email["sender"]
             })
         
     return mails

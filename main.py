@@ -1,8 +1,26 @@
+import os
+from dotenv import load_dotenv
+from crewai import Crew, Process
+from gmail_agent import gmail_reader_agent
+from gmail_service import fetch_mail
+from tasks import gmail_todo
 
-from gmail_agent import Gmail_Agent
-from tasks import Agent_Task
+# Load environment variables from .env.local file
+load_dotenv()
 
-agent = Gmail_Agent.gmail_reader_agent()
+agent = gmail_reader_agent()
 
-task = Agent_Task.gmail_todo(agent, emails)
+emails = fetch_mail()
 
+# print(emails)
+
+task = gmail_todo(agent, emails)
+
+crew = Crew(
+    agents=[agent], 
+    tasks=[task],
+    process=Process.sequential,
+)
+
+results = crew.kickoff()
+print(results)

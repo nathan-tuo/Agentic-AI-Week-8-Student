@@ -1,9 +1,20 @@
-crewai==0.5.0
+# Core dependencies
+crewai==0.114.0
 langchain==0.3.23
+langchain-core==0.3.53
 langchain-community==0.3.21
-langchain-core==0.3.52
+
+# LLM providers
 langchain-groq==0.3.2
-langchain-google-community[gmail]==2.0.7
+groq==0.22.0
+
+# Google integrations
+google-api-python-client==2.167.0
+google-auth==2.39.0
 google-auth-oauthlib==1.2.1
+langchain-google-community==2.0.7
+
+# Utilities
 python-dotenv==1.1.0
-rich==13.9.0
+beautifulsoup4==4.13.4
+pydantic==2.11.3
