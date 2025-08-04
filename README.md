@@ -31,6 +31,7 @@ pip install -r requirements.txt
 export GROQ_API_KEY=your-grok-api-key
 ```
 
+groq_api_key = "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"
 ## Project Structure
 
 - `agents.py`: Defines specialized Gmail agents using CrewAI and Grok
