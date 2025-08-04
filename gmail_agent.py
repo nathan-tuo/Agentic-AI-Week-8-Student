@@ -1,9 +1,10 @@
 from crewai import Agent, LLM
 from textwrap import dedent
 
+GROQ_API_KEY = ""  # Replace with your actual Groq API key
 def gmail_reader_agent():
     llm = LLM(
-        api_key="", # groq API Key here
+        api_key=GROQ_API_KEY,  # groq API Key here
         model="groq/llama-3.3-70b-versatile",  # This is the correct format with groq/ prefix
         temperature=0.7
     )
@@ -22,7 +23,7 @@ def gmail_reader_agent():
 
 def email_drafter_agent():
     llm = LLM(
-        api_key="", # groq API Key here
+        api_key=GROQ_API_KEY,  # groq API Key here
         model="groq/llama-3.3-70b-versatile",
         temperature=0.7
     )
